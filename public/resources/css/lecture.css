@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 강의디자인 */
+.course-wrap {
+	margin-top: 70px;
+}
+
+.section-inner {
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	background-color: white;
+}
+.section-inner p,
+.aside-inner p {
+	margin:0;
+}
+
+.title-inner {
+	position: relative;
+	padding: 15px 0;
+}
+
+.title-inner .profile{
+	position: absolute;/*부모기준으로 위치지정 릴레이티브*/
+	top:15px;
+	left: 0;
+}
+.title-inner .title {
+	padding-left: 50px;
+}
+.title > a {
+	float: right;
+}
+/*내용*/
+.content-inner {
+	padding:10px 0;
+}
+/* 이미지영역  */
+.image-inner img {
+	width:100%;
+}
+/*좋아요*/
+.like-inner {
+	padding:10px 0;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	margin-top: 10px;
+}
+.like-inner img {
+	width:20px;
+	height: 20px;
+}
+.link-inner {
+	overflow: hidden;
+	padding:10px 0;
+}
+.link-inner a {
+	float: left;
+	width: 33.3333%;
+	text-align: center;
+	text-decoration: none;
+	color: #333333;
+}
+.link-inner i {
+	margin: 0 5px;
+}
+.section-inner .contentDiv,
+.section-inner .write-wrap {
+	margin: 0 40px;
+	margin-bottom: 60px;
+}
+@media (max-width:767px){
+	.section-inner .contentDiv,
+	.section-inner .write-wrap {
+		margin: 0;
+		margin-bottom: 60px;
+		}
+	aside {display: inline;}/* XS에서 어사이드바변경 */
+	.menu2 .depth1 {width:50%; float: left; border:1px solid #ddd;}	
+}
+
+aside {border-left: 1px solid #ddd; }
+aside a,
+aside a:hover {text-decoration: none; color: #333;}
+aside[class*=col-sm]  {padding: 0;}
+.menu2 .depth0 {padding: 8px 15px; font-weight:900}
+.menu2 .depth1 {padding: 8px 15px 8px 20px;}
+.menu2 ul li:hover {background-color: #3c9;}
+.select {background-color: #3c9;}
+
