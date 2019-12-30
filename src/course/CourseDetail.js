@@ -30,17 +30,17 @@ class Course extends React.Component {
                                 <p>삶이 우리를 끝없이 시험하기에 고어텍스는 한계를 테스트합니다</p>
                             </div>
                             <div className="image-inner">
-                                <img src="/resources/img/img_ready.png" alt="강의동영상영역"/>
+                                <img src="img/img_ready.png" alt="강의동영상영역"/>
                             </div>
                             <div className="like-inner">
-                                <img src="/resources/img/icon.jpg" alt="좋아요"/><span>522</span>
-                                <img src="/resources/img/icon2.png" alt="즐겨찾기"/><span>5명이 수업참여중</span>
+                                <img src="img/icon.jpg" alt="좋아요"/><span>522</span>
+                                <img src="img/icon2.png" alt="즐겨찾기"/><span>5명이 수업참여중</span>
                             </div>
                         </div>
                         <div className="write-wrap">
                         <form className="reply-wrap">
                             <div className="reply-image">
-                                <img src="/resources/img/profile.png" alt="프로필"/>
+                                <img src="img/profile.png" alt="프로필"/>
                             </div>
                             <div className="reply-content">
                                 <textarea className="form-control" rows="3" name="reply" id="reply"></textarea>
@@ -56,7 +56,7 @@ class Course extends React.Component {
                         <div id="replyList">
                             <div className='reply-wrap'>
                                 <div className='reply-image'>
-                                    <img src='/resources/img/profile.png' alt="프로필"/>
+                                    <img src='img/profile.png' alt="프로필"/>
                                 </div>
                                 <div className='reply-content'>
                                     <div className='reply-group'>

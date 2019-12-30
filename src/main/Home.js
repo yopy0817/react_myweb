@@ -18,17 +18,17 @@ class Home extends React.Component {
                             <div className="carousel-inner">
                                 <div className="item active">
                                     <a href="###">
-                                    <img src="resources/img/slide1.jpg" alt="슬라이드1"/>
+                                    <img src="img/slide1.jpg" alt="슬라이드1"/>
                                     </a>
                                 </div>
                                 <div className="item">
                                     <a href="##">
-                                    <img src="resources/img/slide2.jpg" alt="슬라이드2"/>
+                                    <img src="img/slide2.jpg" alt="슬라이드2"/>
                                     </a>
                                 </div>
                                 <div className="item">
                                     <a href="##">
-                                    <img src="resources/img/slide3.jpg" alt="슬라이드3"/>
+                                    <img src="img/slide3.jpg" alt="슬라이드3"/>
                                     </a>
                                 </div>
                             </div>
@@ -56,63 +56,63 @@ class Home extends React.Component {
                     <ul className="col-xs-12 prod-list">
                         <li className="col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/box1.jpg" alt="자바"/>
+                                <img src="img/box1.jpg" alt="자바"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/box2.jpg" alt="jsp"/>
+                                <img src="img/box2.jpg" alt="jsp"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-3 col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-3 col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-3 col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-3 col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-6 col-sm-12">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-3 col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>
                         </li>
                         <li className="col-md-3 col-sm-6">
                             <a href="##" className="prod-link">
-                                <img src="resources/img/img_ready.png" alt="준비중"/>
+                                <img src="img/img_ready.png" alt="준비중"/>
                                 <span className="arrow"><i className="glyphicon glyphicon-menu-right"></i></span>
                                 <span className="arrow hover">상세보기<i className="glyphicon glyphicon-menu-right"></i></span>
                             </a>

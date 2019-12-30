@@ -16,7 +16,7 @@ class Header extends React.Component {
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                 </button>
-                                <a className="navbar-brand" href="##"><img width="30" src="./resources/img/logo.svg" alt="Brand"/></a>
+                                <a className="navbar-brand" href="##"><img width="30" src="img/logo.svg" alt="Brand"/></a>
                             </div>
     
                             <div className="collapse navbar-collapse" id="myNavbar">

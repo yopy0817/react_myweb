@@ -14,7 +14,7 @@ class Course extends React.Component {
 	                    	<small>언어</small>                    
 	                </div>
                     <div className="course col-xs-12 col-sm-6 col-md-4">
-                        <img src="/resources/img/box2.jpg" alt="사진" />
+                        <img src="img/box2.jpg" alt="사진" />
                         <div className="course_inner">
                             <h3 className="course_title">제목</h3>
                             <p className="course_summary">
@@ -23,7 +23,7 @@ class Course extends React.Component {
                         </div>
                     </div>
                     <div className="course col-xs-12 col-sm-6 col-md-4">
-                        <img src="/resources/img/box1.jpg" alt="사진" />
+                        <img src="img/box1.jpg" alt="사진" />
                         <div className="course_inner">
                             <h3 className="course_title">제목</h3>
                             <p className="course_summary">
@@ -32,7 +32,7 @@ class Course extends React.Component {
                         </div>
                     </div>
                     <div className="course col-xs-12 col-sm-6 col-md-4">
-                        <img src="/resources/img/box1.jpg" alt="사진" />
+                        <img src="img/box1.jpg" alt="사진" />
                         <div className="course_inner">
                             <h3 className="course_title">제목</h3>
                             <p className="course_summary">
@@ -41,7 +41,7 @@ class Course extends React.Component {
                         </div>
                     </div>
                     <div className="course col-xs-12 col-sm-6 col-md-4">
-                        <img src="/resources/img/box1.jpg" alt="사진" />
+                        <img src="img/box1.jpg" alt="사진" />
                         <div className="course_inner">
                             <h3 className="course_title">제목</h3>
                             <p className="course_summary">
@@ -50,7 +50,7 @@ class Course extends React.Component {
                         </div>
                     </div>
                     <div className="course col-xs-12 col-sm-6 col-md-4">
-                        <img src="/resources/img/box1.jpg" alt="사진" />
+                        <img src="img/box1.jpg" alt="사진" />
                         <div className="course_inner">
                             <h3 className="course_title">제목</h3>
                             <p className="course_summary">
@@ -59,7 +59,7 @@ class Course extends React.Component {
                         </div>
                     </div>
                     <div className="course col-xs-12 col-sm-6 col-md-4">
-                        <img src="/resources/img/box1.jpg" alt="사진" />
+                        <img src="img/box1.jpg" alt="사진" />
                         <div className="course_inner">
                             <h3 className="course_title">제목</h3>
                             <p className="course_summary">
