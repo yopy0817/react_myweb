@@ -1,6 +1,12 @@
 import React from 'react';
+import Axios from 'axios';
 
 class Notice extends React.Component {
+    
+    getCourse = () => {
+        
+    }
+    
     
     render() {
         return(

@@ -1,8 +1,18 @@
 import React from 'react';
+import Axios from 'axios';
 
 import './Course.css';
 
 class Course extends React.Component {
+    getTest = async() => {
+
+        const result = await Axios.get("http://localhost:8282");
+        console.log(result);
+    }
+
+    componentDidMount() {
+        this.getTest();
+    }
 
     render() {
         return (
