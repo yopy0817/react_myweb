@@ -4,19 +4,35 @@ import Axios from 'axios';
 import './Course.css';
 
 class Course extends React.Component {
-    getTest = async() => {
-
-        const result = await Axios.get("http://localhost:8282");
-        console.log(result);
+    
+    state = {
+        isLoading:true,
+        courseList:[],
+        loadingImg:['../img/blog1.png', '../img/blog2.png', '../img/blog3.jpg', '../img/blog4.png'],
+        isLoadingImg: true
     }
-
+    
+    getCourse = async() => {// async는 이 함수는 비동기야 await가 끝날떄 까지 기다려줘! 라는 것을 의미한다
+        const result = await Axios.get("http://localhost:8282/getCourse");
+        
+        this.setState({isLoading:false}); //로딩후 여부를 false로
+    }
+    //랜더 이후 실행함수
     componentDidMount() {
-        this.getTest();
+        this.getCourse();
+        setInterval( () => {//로딩중 화면변경 기능
+            this.setState({isLoadingImg:true})
+        }, 200)
     }
 
     render() {
+
+        const result = (<div className="loading">
+                            <img className="loading_img" src={this.state.loadingImg[parseInt(Math.random() * 3)]}/>
+                       </div>)
         return (
             <section>
+            {this.state.isLoading ? result : 
             <div className="container">
                 <div className="row">
                     <div className="titlebox">
@@ -79,6 +95,7 @@ class Course extends React.Component {
                     </div>
                 </div>
             </div>
+            }
             </section>
         )
     }

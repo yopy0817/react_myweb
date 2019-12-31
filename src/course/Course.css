@@ -29,3 +29,16 @@
 .course_inner h3 {
     margin: 0;
 }
+
+.loading {
+
+    height: 800px;
+    display: flex;
+    justify-content: center;/*flex와 함께 justify는 가로중앙정렬*/
+    align-items: center;/*flex와 함께 justify는 세로중앙정렬*/
+    
+}
+.loading .loading_img {
+
+    max-width:20%;
+}
