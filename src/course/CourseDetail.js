@@ -1,46 +1,72 @@
 import React from 'react';
+import Axios from 'axios';
 
 class Course extends React.Component {
 
+    state = {
+        lecName: "",
+        lecRegdate: "",
+        data:[]
+    }
+    handleClick = (event) => {
+        event.preventDefault();
+        console.log(event.target)
+    }
+
+    getDetail = async() => {
+        const {location} = this.props;
+        const {lecNo, lecName, lecRegdate} = location.state;
+        const {data} = await Axios.get(`http://localhost:8282/getDetail/${lecNo}`);
+        this.setState({data:data, lecName:lecName, lecRegdate:lecRegdate});
+    }
+    componentDidMount() {
+        this.getDetail();
+    }
+
     render() {
+        const mapResult = (data) => {
+            console.log(data);
+            return data.map( (result, i) => {
+                return (
+                    <li	className={`depth1 ${i === 0 ? 'select':''}`} key={i}>
+                        <a href="##" onClick={this.handleClick}>{result.lecListName}</a>
+                    </li>
+                )
+            });
+        }
         return(
             <section className="course-wrap">
             <div className="container">
                 <div className="row">
                     <aside className="col-xs-12 col-sm-3 col-md-3">
                         <div className="menu2">
-                            <div className="depth0">강의명</div>
+                            <div className="depth0">{this.state.lecName}</div>
                             <ul>
-                                <li	className="depth1 select">
-                                    <a href="##">강의명</a>
-                                </li>
-                                <li	className="depth1">
-                                    <a href="##">강의명</a>
-                                </li>
+                                {mapResult(this.state.data)}
                             </ul>
                         </div>
                     </aside>
                     <div className="col-xs-12 col-sm-9 col-md-9 section-inner">
                         <div className="contentDiv" id="contentDiv">
                             <div className="titlebox">
-                                <p>강의명</p>
-                                <small>강의등록일</small>                    
+                                <p>{this.state.lecName}</p>
+                                <small>{this.state.lecRegdate}</small>                    
                             </div>
                             <div className="content-inner">
                                 <p>삶이 우리를 끝없이 시험하기에 고어텍스는 한계를 테스트합니다</p>
                             </div>
                             <div className="image-inner">
-                                <img src="img/img_ready.png" alt="강의동영상영역"/>
+                                <img src="../img/img_ready.png" alt="강의동영상영역"/>
                             </div>
                             <div className="like-inner">
-                                <img src="img/icon.jpg" alt="좋아요"/><span>522</span>
-                                <img src="img/icon2.png" alt="즐겨찾기"/><span>5명이 수업참여중</span>
+                                <img src="../img/icon.jpg" alt="좋아요"/><span>522</span>
+                                <img src="../img/icon2.png" alt="즐겨찾기"/><span>5명이 수업참여중</span>
                             </div>
                         </div>
                         <div className="write-wrap">
                         <form className="reply-wrap">
                             <div className="reply-image">
-                                <img src="img/profile.png" alt="프로필"/>
+                                <img src="../img/profile.png" alt="프로필"/>
                             </div>
                             <div className="reply-content">
                                 <textarea className="form-control" rows="3" name="reply" id="reply"></textarea>
@@ -56,7 +82,7 @@ class Course extends React.Component {
                         <div id="replyList">
                             <div className='reply-wrap'>
                                 <div className='reply-image'>
-                                    <img src='img/profile.png' alt="프로필"/>
+                                    <img src='../img/profile.png' alt="프로필"/>
                                 </div>
                                 <div className='reply-content'>
                                     <div className='reply-group'>

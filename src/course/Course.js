@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
-import './Course.css';
+import CourseList from './CourseList';
 
 class Course extends React.Component {
     
@@ -12,24 +12,36 @@ class Course extends React.Component {
         isLoadingImg: true
     }
     
-    getCourse = async() => {// async는 이 함수는 비동기야 await가 끝날떄 까지 기다려줘! 라는 것을 의미한다
-        const result = await Axios.get("http://localhost:8282/getCourse");
+    getCourse = async(interval) => {// async는 이 함수는 비동기야 await가 끝날떄 까지 기다려줘! 라는 것을 의미한다
+        const {data} = await Axios.get("http://localhost:8282/getCourse");
         
-        this.setState({isLoading:false}); //로딩후 여부를 false로
+        this.setState({courseList:data, isLoading:false}); //state변경, 로딩후 여부를 false로
+        clearInterval(interval); //interval메서드 중지
     }
     //랜더 이후 실행함수
     componentDidMount() {
-        this.getCourse();
-        setInterval( () => {//로딩중 화면변경 기능
-            this.setState({isLoadingImg:true})
-        }, 200)
-    }
+        let interval = setInterval(() => {//로딩중 화면변경 기능
+                this.setState({ isLoadingImg: true })
+        }, 300);
+        this.getCourse(interval); //비동기 함수 실행
 
+    }
     render() {
 
         const result = (<div className="loading">
                             <img className="loading_img" src={this.state.loadingImg[parseInt(Math.random() * 3)]}/>
                        </div>)
+        const mapResult = (courseList) => {
+            return courseList.map((result, i) => {
+                return <CourseList key={i} 
+                                   lecNo={result.lecNo} 
+                                   lecName={result.lecName} 
+                                   lecRegdate={result.lecRegdate}
+                                   lecImg={result.lecImg}
+                                   />
+            })
+        }
+
         return (
             <section>
             {this.state.isLoading ? result : 
@@ -39,6 +51,8 @@ class Course extends React.Component {
 	                    	<p>강의목록</p>
 	                    	<small>언어</small>                    
 	                </div>
+                    {mapResult(this.state.courseList)}
+                    {/* 
                     <div className="course col-xs-12 col-sm-6 col-md-4">
                         <img src="img/box2.jpg" alt="사진" />
                         <div className="course_inner">
@@ -93,6 +107,7 @@ class Course extends React.Component {
                             </p>
                         </div>
                     </div>
+                     */}
                 </div>
             </div>
             }
