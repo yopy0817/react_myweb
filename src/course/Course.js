@@ -24,12 +24,11 @@ class Course extends React.Component {
                 this.setState({ isLoadingImg: true })
         }, 300);
         this.getCourse(interval); //비동기 함수 실행
-
     }
     render() {
 
         const result = (<div className="loading">
-                            <img className="loading_img" src={this.state.loadingImg[parseInt(Math.random() * 3)]}/>
+                            <img className="loading_img" src={this.state.loadingImg[parseInt(Math.random() * 3)]} alt="로딩이미지"/>
                        </div>)
         const mapResult = (courseList) => {
             return courseList.map((result, i) => {

@@ -10,7 +10,7 @@ class Footer extends React.Component {
                     <div className="col-md-7 col-sm-12">
                         <div className="copyright">
                             <a href="##">
-                                <img width="20" src="img/logo.svg" alt="Brand"/>
+                                <img width="20" src="http://localhost:3000/img/logo.svg" alt="Brand"/>
                             </a>
                             Bootstrap | 대표자 : 홍길동 | E-MAIL : info&#64;info.com<br/>
                             사업자번호 : 123-56-78910 | 개인정보보호책임자 : 홍길동 | 통신판매업 : 2019-서울강남-0001<br/>

@@ -10,8 +10,8 @@ class CourseList extends React.Component {
         return (
             <div className="course col-xs-12 col-sm-6 col-md-4">
                 <Link to={{
-                      pathname: `/course/${lecNo}`,
-                      state: {lecNo: lecNo, lecName: lecName, lecRegdate: lecRegdate}      
+                      pathname: `/course/${lecNo}/${lecNo}`,
+                      state: {lecNo: lecNo, lecName: lecName, lecRegdate: lecRegdate, lecListNo: lecNo}      
                 }}>
                 <img src={`http://localhost:8282/display/${lecImg}`} alt="사진" />
                 </Link>
