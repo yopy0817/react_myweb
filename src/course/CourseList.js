@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 class CourseList extends React.Component {
 
     render() {
-        
         const {lecNo, lecName, lecRegdate, lecImg} = this.props;
         return (
             <div className="course col-xs-12 col-sm-6 col-md-4">
@@ -31,7 +30,7 @@ CourseList.propTypes = {
     lecNo: PropTypes.number,
     lecName: PropTypes.string,
     lecRegdate: PropTypes.string,
-    lecImg:PropTypes.string
+    lecImg: PropTypes.string
 }
 
 export default CourseList;
