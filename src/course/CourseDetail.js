@@ -23,11 +23,13 @@ class CourseDetail extends React.Component {
     }
     handleClick = (event) => {
         this.setState({lecListNo: parseInt( event.target.getAttribute("data-lec-id")) });
-        console.log(this.state.lecListNo)
+        //console.log(this.state.lecListNo)
+
     }
 
     componentDidMount() {
         this.getDetail();
+
     }
 
     render() {
@@ -87,7 +89,7 @@ class CourseDetail extends React.Component {
                     </aside>
                     <div className="col-xs-12 col-sm-9 col-md-9 section-inner">
                         {mapResult2(this.state.data)}
-                        <CourseReply bno={this.state.lecListNo} />
+                        <CourseReply bno={this.state.lecListNo}/>
                     </div>
                 </div>
             </div>
