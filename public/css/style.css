@@ -373,11 +373,11 @@ footer .footer-menu li a {
 }
 
 .search-input {
-	width: 200px;
+	width: 110px;
 }
 
 .search-select {
-	width: 100px;
+	width: 90px;
 }
 
 /*제목에 클래스를 줘서 강제로 크기 고정*/
@@ -476,7 +476,7 @@ footer .footer-menu li a {
 }
 
 .reply-input>.form-control {
-	width: 150px;
+	width: 110px;
 	margin-bottom: 5px;
 }
 

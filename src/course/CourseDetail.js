@@ -3,6 +3,7 @@ import Axios from 'axios';
 import {Link} from 'react-router-dom';
 
 import CourseReply from '../reply/CourseReply';
+import Moment from 'react-moment';
 
 class CourseDetail extends React.Component {
     state = {
@@ -28,8 +29,9 @@ class CourseDetail extends React.Component {
     }
 
     componentDidMount() {
+        
         this.getDetail();
-
+        
     }
 
     render() {
@@ -59,7 +61,7 @@ class CourseDetail extends React.Component {
                     <div className="contentDiv" id="contentDiv">
                         <div className="titlebox">
                             <p>{data[0].lecListName}</p>
-                            <small>{data[0].regdate}</small>                    
+                            <small><Moment format="YYYY/MM/DD HH:mm:ss">{data[0].regdate}</Moment></small>                    
                         </div>
                         <div className="content-inner">
                             <p>삶이 우리를 끝없이 시험하기에 고어텍스는 한계를 테스트합니다</p>
