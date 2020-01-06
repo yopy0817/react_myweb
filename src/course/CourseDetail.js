@@ -10,7 +10,7 @@ class CourseDetail extends React.Component {
         lecNo: 0,
         lecName: "",
         lecRegdate: "",
-        lecListNo: this.props.location.state.lecListNo, //현재선택되어있는 강의번호
+        lecListNo: 0, //this.props.location.state.lecListNo, //현재선택되어있는 강의번호
         data:[]
     }
     getDetail = async() => {
@@ -30,7 +30,14 @@ class CourseDetail extends React.Component {
 
     componentDidMount() {
         
-        this.getDetail();
+        //강제접근을 막는 로직
+        const {location, history} = this.props;
+        if(location.state === undefined) {
+            history.push("/course");
+        } else {
+            this.setState({lecListNo: location.state.lecListNo});
+            this.getDetail();
+        }
         
     }
 

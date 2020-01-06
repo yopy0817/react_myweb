@@ -24,7 +24,7 @@ class CourseRReply extends React.Component {
         } else if(this.state.replyVO.reply_pw.length < 4) {
             alert("비밀번호는 4글자 이상으로 입력하세요");
         } else {
-            const {seq, reply, reply_id, reply_pw} = this.state.replyVO;
+            const {reply, reply_id, reply_pw} = this.state.replyVO;
             Axios.post("http://localhost:8282/replyRegist", //요청주소
                         {bno: bno, reply: reply, reply_id: reply_id, reply_pw: reply_pw, parent_rno: parent_rno } //전송할JSON
                         )
@@ -32,6 +32,7 @@ class CourseRReply extends React.Component {
                             if(res.data === 1) {
                                 this.setState({replyVO: {reply:"", reply_id:"", reply_pw:""} })
                                 this.props.getReply(bno); //부모 함수 실행
+                                this.props.toggleClose(); //토글처리 메서드
                             } else {
                                 alert("댓글 등록에 실패했습니다. 잠시후 다시 시도하세요1.");
                             }
@@ -46,7 +47,7 @@ class CourseRReply extends React.Component {
 
         //console.log("rrply에요", this.props.bno, this.props.parent_rno)
         return (
-            <div className="reply-wrap rrply hide" id={this.props.parent_rno} style={replyWrap}>
+            <div className="reply-wrap rrply hide" style={replyWrap}>
                 <div className="reply-image" style={replyImg}>
                     <img src="../../img/profile.png" alt="프로필" />
                 </div>
@@ -70,7 +71,8 @@ CourseRReply.propTypes = {
     reply_id:PropTypes.string,
     parent_rno: PropTypes.number,
     bno:PropTypes.number,
-    getReply: PropTypes.func
+    getReply: PropTypes.func,
+    toggleClose: PropTypes.func
 }
 
 

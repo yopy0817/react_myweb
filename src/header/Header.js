@@ -38,17 +38,15 @@ class Header extends React.Component {
                                     */}
                                 </ul>
                                 <ul className="nav navbar-nav navbar-right">
-                                    
                                     <li className="dropdown">
-                                        <a className="dropdown-toggle" data-toggle="dropdown" href="##">드롭다운
-                                            <span className="caret"></span></a>
+                                        <a className="dropdown-toggle" data-toggle="dropdown" href="##" style={{padding: 10}}>
+                                            <img src="http://localhost:3000/img/user_logo.png" width={30} alt="로그인"/>
+                                        </a>
                                         <ul className="dropdown-menu">
-                                            
                                             <li><a href="##"><span className="glyphicon glyphicon-user"></span>Join</a></li>
                                             <li><a href="##"><span className="glyphicon glyphicon-log-in"></span>Login</a></li>
                                             <li><a href="##"><span className="glyphicon glyphicon-user"></span>MyPage</a></li>
                                             <li><a href="##"><span className="glyphicon glyphicon-log-out"></span>Logout</a></li>
-                                            
                                         </ul>
                                     </li>
                                 </ul>

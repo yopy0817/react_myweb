@@ -8,7 +8,6 @@ import CourseDelete from './CourseDelete';
 class CourseReply extends React.Component {
 
     state = {
-        isLoading: true,
         replyVO: {
             bno: this.props.bno,
             reply: "",
@@ -47,7 +46,7 @@ class CourseReply extends React.Component {
     //댓글 조회 함수
     getReply = async(bno) => {
         const {data} = await Axios.get(`http://localhost:8282/getReply/${bno}`);
-        this.setState({data:data, isLoading: false});
+        this.setState({data:data});
         
     }
     //댓글 핸들 메서드
@@ -60,27 +59,27 @@ class CourseReply extends React.Component {
     }
     //답글 클릭시 토글 처리
     handleReply = (event) => {
+        //const rno = event.target.getAttribute("data-rno-id");
+        //document.getElementById(rno).classList.toggle("hide");
+        
         event.preventDefault();
         //previousSibling, nextSibling, parentNode, childeNodes
-        //console.dir(event.target.parentNode.parentNode.parentNode.nextSibling.classList.toggle("hide"));
-        const rno = event.target.getAttribute("data-rno-id");
-        document.getElementById(rno).classList.toggle("hide");
+        event.currentTarget.parentNode.parentNode.parentNode.nextSibling.classList.toggle("hide");
         
     }
     //토글 닫는 함수
     toggleClose = () => {
-        const rrply = document.querySelectorAll(".rrply");
-        rrply.forEach((element, index, array) => {
+        const result = document.querySelectorAll(".rrply, .reply-delete");
+        result.forEach((element, index, array) => {
             element.classList.toggle("hide", true);
         }) 
     }
 
     handleReplyDelete = (event) => {
         event.preventDefault();
-        const rno = event.target.getAttribute("data-rno-id");
-        const deleteForm = event.target.parentNode.parentNode.parentNode.nextSibling;
-        deleteForm.classList.toggle("hide");
+        event.currentTarget.parentNode.parentNode.parentNode.nextSibling.nextSibling.classList.toggle("hide");
     }
+
 
     //다른 메뉴를 클릭할때 업데이트 시켜주는 메서드(detail에서도 state가 변할때 실행되므로 조건을 잘 생각해야한다)
     componentDidUpdate(prevProps, prevState) {
@@ -99,6 +98,7 @@ class CourseReply extends React.Component {
     render() {
         const replyWrap = {padding: '15px 15px 15px 75px'}
         const replyImg = {left: '75px'}
+        const replyDel = {marginLeft: '60px', height:'40px', lineHeight:'40px'}
 
         const mapResult = (data) => {
             console.log(data);
@@ -109,6 +109,9 @@ class CourseReply extends React.Component {
                         <div className='reply-image' style={result.seq === 0 ? {} : replyImg }>
                             <img src='../../img/profile.png' alt="프로필" />
                         </div>
+                        {result.is_delete === 'y' ? //삭제된 경우 삭제처리
+                            <p style={replyDel}>삭제된 댓글입니다</p>
+                        :
                         <div className='reply-content'>
                             <div className='reply-group'>
                                 <strong className='left'>{result.reply_id}</strong><small className='left'>
@@ -118,20 +121,22 @@ class CourseReply extends React.Component {
                                 <a href='##' className='right' id="replyModify" data-rno-id={result.rno}>
                                     <span className='glyphicon glyphicon-pencil' data-rno-id={result.rno}></span>수정</a>
                                  */}
-                                <a href='##' className='right' id="replyDelete" data-rno-id={result.rno} onClick={this.handleReplyDelete}>
-                                    <span className='glyphicon glyphicon-remove' data-rno-id={result.rno} ></span>삭제</a>
+                                <a href='##' className='right' id="replyDelete" onClick={this.handleReplyDelete}>
+                                    <span className='glyphicon glyphicon-remove' ></span>삭제</a>
                                 {result.seq === 0 //댓글인경우만 답글 보이기
-                                ? <a href='##' className='right' id="replyDelete" data-rno-id={result.rno} onClick={this.handleReply}>
-                                    <span className='glyphicon glyphicon-envelope' data-rno-id={result.rno}></span>답글</a> 
+                                ? <a href='##' className='right' id="replyDelete" onClick={this.handleReply}>
+                                    <span className='glyphicon glyphicon-envelope'></span>답글</a> 
                                 : ''    
                                 }        
                             </div>
                             <p className='clearfix'>{result.reply}</p>
                         </div>
+                        }
                     </div>
-                        <CourseDelete parent_rno={result.rno}/>
                         {/* 대댓글등록(hide로 숨김처리) 함수전달*/}
-                        <CourseRReply reply_id={result.reply_id} parent_rno={result.rno} bno={result.bno} getReply={(i)=>{this.getReply(i)}}/>
+                        <CourseRReply reply_id={result.reply_id} parent_rno={result.rno} bno={result.bno} getReply={(i) => { this.getReply(i) }} toggleClose={()=> {this.toggleClose()}}/>
+                        {/* 댓글 삭제처리 */}
+                        <CourseDelete rno={result.rno} bno={result.bno} getReply={(i) => { this.getReply(i) }} toggleClose={()=> {this.toggleClose()}} />
                         {/* 
                         <form className="reply-wrap rrply hide" id={result.rno} style={replyWrap}>
                             <div className="reply-image" style={replyImg}>
@@ -148,8 +153,7 @@ class CourseReply extends React.Component {
                                 </div>
                             </div>
                         </form>
-                        */}               
-
+                        */}
                     </div>
                 )
             })
