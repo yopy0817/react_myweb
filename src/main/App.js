@@ -19,7 +19,6 @@ class App extends React.Component {
                 <Route path="/notice" exact={true} component={Notice}/>
                 <Route path="/course" exact={true} component={Course}/>
                 <Route path="/course/:id/:id2" exact={true} component={CourseDetail}/>
-                {/* <Route path="/course/:id/:id" exact={true} component={CourseDetailList}/> */}
                 <Footer/>              
             </BrowserRouter>
         )

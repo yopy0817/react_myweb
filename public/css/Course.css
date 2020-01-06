@@ -39,6 +39,22 @@
     
 }
 .loading .loading_img {
-
     max-width:20%;
+}
+
+/*삭제버튼*/
+.reply {
+    position: relative;
+}
+.reply-delete {
+    background-color: white;
+    display: block;
+    width: 218px; 
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    text-align: center;
+    padding: 15px;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }

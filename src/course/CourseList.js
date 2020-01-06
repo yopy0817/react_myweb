@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import Moment from 'react-moment';
 
 class CourseList extends React.Component {
 
@@ -17,7 +18,7 @@ class CourseList extends React.Component {
                 <div className="course_inner">
                     <h3 className="course_title">{lecName}</h3>
                     <p className="course_summary">
-                        {lecRegdate}
+                        <Moment format="YYYY/MM/DD HH:mm">{lecRegdate}</Moment>
                     </p>
                 </div>
             </div>
