@@ -17,7 +17,7 @@ class Header extends React.Component {
                                     <span className="icon-bar"></span>
                                 </button>
                                 <Link to={{pathname:"/"}} className="navbar-brand">
-                                    <img width="30" src="http://localhost:3000/img/logo.svg" alt="Brand"/>
+                                    <img width="30" src="/img/logo.svg" alt="Brand"/>
                                 </Link>
                             </div>
     
@@ -40,7 +40,7 @@ class Header extends React.Component {
                                 <ul className="nav navbar-nav navbar-right">
                                     <li className="dropdown">
                                         <a className="dropdown-toggle" data-toggle="dropdown" href="##" style={{padding: 10}}>
-                                            <img src="http://localhost:3000/img/user_logo.png" width={30} alt="로그인"/>
+                                            <img src="/img/user_logo.png" width={30} alt="로그인"/>
                                         </a>
                                         <ul className="dropdown-menu">
                                             <li><a href="##"><span className="glyphicon glyphicon-user"></span>Join</a></li>
